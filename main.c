@@ -12,62 +12,39 @@
 
 #include "head.h"
 
-/* input parameters validation */
-
-int		ft_check_nb(char *nb)
+t_list 	*ft_read(char **argv)
 {
-	int i;
+	t_list 	*new;
+	t_list 	*head;
+	char 	*line;
+	int 	fd;
+	int 	res;
 
-	i = ft_atoi(nb);
-	if (0 <= i && i <= 100)
-		return (1);
-	return (-1);
-}
-
-int		ft_check_filename(char *filename)
-{
-	int		i;
-	char	*str;
-
-	i = 0;
-	while (filename[i] != '\0' && filename[i] != '.')
-		i++;
-	str = ft_strsub(filename, i, ft_strlen(filename));
-	if (filename[i] && i && !(ft_strcmp(str, ".pgm")))
+	fd = open(argv[2], O_RDONLY);
+	if ((res = get_next_line(fd, &line)) <= 0)
+		return (ft_nlstnew(""));
+	new = ft_nlstnew(line);
+	head = new;
+	free(line);
+	while ((res = get_next_line(fd, &line)) > 0)
 	{
-		free(str);
-		return (1);
+		ft_nlstadd(new, line);
+		printf("%s\n", new->line);
+		free(line);
+		line = NULL;
+		// ft_bzero(line, ft_strlen(line));
 	}
-	return (-1);
-}
-
-int		ft_check_args(int argc, char **av)
-{
-	if (argc == 7 && ft_strcmp(av[0], "./ft_contrast") == 0 &&
-		ft_strcmp(av[1], "-f") == 0 && ft_check_filename(av[2]) == 1 &&
-		ft_strcmp(av[3], "-c") == 0 && ft_check_nb(av[4]) == 1 &&
-		ft_strcmp(av[5], "-o") == 0 && ft_check_filename(av[6]) == 1)
-		return (1);
-	return (-1);
-}
-
-int 	input_param(int argc, char **argv)
-{
-	if (ft_check_args(argc, argv) != 1)
-	{
-		printf("%s%s%s%s%s", "usage: ", argv[0], " -f source_file -c x -o ",
-			"new_file\nsource_file and new_file must have .pgm ",
-			"expansion\n0 <= x <= 100\n");
-		return (-1);
-	}
-	return (1);
+	return (head);
 }
 
 int		main(int argc, char **argv)
 {
+	t_list 	*list_read;
+
 	if (input_param(argc, argv) == 1)
 	{
-		// code
+		list_read = ft_read(argv);
+		if (list_read->len == 0)
+			return (0);
 	}
-	return (0);
 }

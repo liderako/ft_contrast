@@ -28,7 +28,8 @@ LIBFT = ./src/general/libft/ft_bzero.c 											\
 LIST = 	./src/general/list/ft_nlstadd.c 										\
 		./src/general/list/ft_nlstnew.c 										\
 
-GENERAL = ./src/general/get_next_line.c 										\
+GENERAL = 	./src/general/get_next_line.c 										\
+			./src/general/input_param.c 										\
 
 SRC = 	$(LIBFT)																\
 		$(LIST) 																\

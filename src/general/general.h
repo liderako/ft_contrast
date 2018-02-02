@@ -14,6 +14,7 @@
 # define GENERAL_H
 # include "get_next_line.h"
 # include "libft/libft.h"
+# include <stdio.h>
 
 typedef struct 	s_list
 {
@@ -25,5 +26,6 @@ typedef struct 	s_list
 
 t_list		*ft_nlstnew(char *string);
 void		ft_nlstadd(t_list *nlst, char *string);
+int 		input_param(int argc, char **argv);
 
 #endif
