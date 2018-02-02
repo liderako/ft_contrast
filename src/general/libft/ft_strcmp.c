@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nlstnew.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asvirido <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/02 20:08:06 by asvirido          #+#    #+#             */
-/*   Updated: 2018/02/02 20:08:07 by asvirido         ###   ########.fr       */
+/*   Created: 2016/11/22 11:59:39 by asvirido          #+#    #+#             */
+/*   Updated: 2016/12/06 14:42:37 by asvirido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../general.h"
+#include "libft.h"
 
-t_list		*ft_nlstnew(char *string)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	t_list	*nw;
+	unsigned char	*p1;
+	unsigned char	*p2;
+	int				i;
 
-	nw = (t_list *)malloc(sizeof(t_list));
-	if (nw)
-	{
-		nw->line = string;
-		nw->len = ft_strlen(string);
-		nw->next = NULL;
-		return (nw);
-	}
-	else
-		return (NULL);
+	i = 0;
+	p1 = (unsigned char*)s1;
+	p2 = (unsigned char*)s2;
+	while (p1[i] == p2[i] && p2[i] != '\0')
+		i++;
+	if ((p1[i] == '\0') && (p2[i] == '\0'))
+		return (0);
+	return (p1[i] - p2[i]);
 }

@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
+#include "head.h"
 
 /* input parameters validation */
 
@@ -52,13 +51,23 @@ int		ft_check_args(int argc, char **av)
 	return (-1);
 }
 
+int 	input_param(int argc, char **argv)
+{
+	if (ft_check_args(argc, argv) != 1)
+	{
+		printf("%s%s%s%s%s", "usage: ", argv[0], " -f source_file -c x -o ",
+			"new_file\nsource_file and new_file must have .pgm ",
+			"expansion\n0 <= x <= 100\n");
+		return (-1);
+	}
+	return (1);
+}
+
 int		main(int argc, char **argv)
 {
-	if (ft_check_args(argc, argv) == 1)
-		printf("%s\n", "ALL IS OK :)");
-	else
-		printf("%s%s%s", "usage: ft_contrast -f source_file -c x -o new_file\n",
-			"source_file and new_file must have .pgm expansion\n",
-			"0 <= x <= 100\n");
+	if (input_param(argc, argv) == 1)
+	{
+		// code
+	}
 	return (0);
 }

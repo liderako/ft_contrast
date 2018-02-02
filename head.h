@@ -13,5 +13,5 @@
 #ifndef HEAD_H
 # define HEAD_H
 # include "src/general/general.h"
-
+# include <stdio.h>
 #endif

@@ -21,6 +21,9 @@ LIBFT = ./src/general/libft/ft_bzero.c 											\
 		./src/general/libft/ft_strdup.c 										\
 		./src/general/libft/ft_strjoin.c 										\
 		./src/general/libft/ft_strlen.c 										\
+		./src/general/libft/ft_atoi.c 											\
+		./src/general/libft/ft_strsub.c 										\
+		./src/general/libft/ft_strcmp.c 										\
 
 LIST = 	./src/general/list/ft_nlstadd.c 										\
 		./src/general/list/ft_nlstnew.c 										\
@@ -30,6 +33,7 @@ GENERAL = ./src/general/get_next_line.c 										\
 SRC = 	$(LIBFT)																\
 		$(LIST) 																\
 		$(GENERAL)																\
+		main.c 																	\
 
 BINS = $(SRC:.c=.o)
 

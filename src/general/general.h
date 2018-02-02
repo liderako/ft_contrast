@@ -15,6 +15,14 @@
 # include "get_next_line.h"
 # include "libft/libft.h"
 
+typedef struct 	s_list
+{
+	char 			*line;
+	size_t			len;
+	struct s_list	*next;
+}				t_list;
+
+
 t_list		*ft_nlstnew(char *string);
 void		ft_nlstadd(t_list *nlst, char *string);
 
