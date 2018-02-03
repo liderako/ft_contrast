@@ -16,6 +16,17 @@
 # include "libft/libft.h"
 # include <stdio.h>
 
+typedef struct		s_contrast
+{
+	int			*mapping_pixel;
+	int 		size_map;
+	int			lenght;
+	int			height;
+	int			max_grey_lvl;
+	int			contrast_lvl;
+	char		*name_new_file;
+}					t_contrast;
+
 typedef struct	s_lst
 {
 	char			*line;
@@ -27,5 +38,9 @@ t_lst			*ft_nlstnew(char *string);
 void			ft_nlstadd(t_lst *nlst, char *string);
 int				input_param(int argc, char **argv);
 t_lst			*ft_read(char **argv);
+void 			init(t_contrast *main, char **argv);
+void			change_mapping(t_contrast *main);
+void 			algo_contrast(t_contrast *main, int i);
+void			save_file(t_contrast *main);
 
 #endif

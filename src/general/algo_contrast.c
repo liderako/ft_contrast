@@ -1,17 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   head.h                                             :+:      :+:    :+:   */
+/*   algo_contrast.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asvirido <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/12 18:00:34 by asvirido          #+#    #+#             */
-/*   Updated: 2018/02/03 11:03:51 by asvirido         ###   ########.fr       */
+/*   Created: 2018/02/03 13:42:50 by asvirido          #+#    #+#             */
+/*   Updated: 2018/02/03 13:42:50 by asvirido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEAD_H
-# define HEAD_H
-# include "src/general/general.h"
+#include "general.h"
 
-#endif
+void 	algo_contrast(t_contrast *main, int i)
+{
+	int 	res;
+
+	res = main->mapping_pixel[i];
+	res = res * main->contrast_lvl * main->max_grey_lvl;
+	main->mapping_pixel[i] = res / 100;
+}

@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   head.h                                             :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asvirido <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/12 18:00:34 by asvirido          #+#    #+#             */
-/*   Updated: 2018/02/03 11:03:51 by asvirido         ###   ########.fr       */
+/*   Created: 2018/02/03 13:42:57 by asvirido          #+#    #+#             */
+/*   Updated: 2018/02/03 13:42:58 by asvirido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEAD_H
-# define HEAD_H
-# include "src/general/general.h"
+#include "general.h"
 
-#endif
+void 	init(t_contrast *main, char **argv)
+{
+	main->name_new_file = ft_strdup(argv[6]);
+	main->contrast_lvl = ft_atoi(argv[4]);
+}

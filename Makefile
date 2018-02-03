@@ -25,6 +25,10 @@ LIBFT = ./src/general/libft/ft_atoi.c 											\
 		./src/general/libft/ft_strjoin.c 										\
 		./src/general/libft/ft_strlen.c 										\
 		./src/general/libft/ft_strsub.c 										\
+		./src/general/libft/ft_putchar_fd.c 									\
+		./src/general/libft/ft_putnbr_fd.c 										\
+		./src/general/libft/ft_putstr_fd.c 										\
+
 
 LIST = 	./src/general/list/ft_nlstadd.c 										\
 		./src/general/list/ft_nlstnew.c 										\
@@ -32,6 +36,11 @@ LIST = 	./src/general/list/ft_nlstadd.c 										\
 GENERAL = 	./src/general/get_next_line.c 										\
 			./src/general/input_param.c 										\
 			./src/general/ft_read.c 											\
+			./src/general/init.c 												\
+			./src/general/algo_contrast.c 										\
+			./src/general/change_mapping.c 										\
+			./src/general/save_file.c 											\
+
 
 SRC = 	$(LIBFT)																\
 		$(LIST) 																\
