@@ -17,8 +17,8 @@
 typedef struct		s_contrast
 {
 	int			*mapping_pixel;
+	int 		size_map;
 	int			lenght;
-	int			size_map;
 	int			height;
 	int			max_grey_lvl;
 	int			contrast_lvl;
