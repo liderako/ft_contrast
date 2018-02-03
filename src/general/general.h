@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   general.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asvirido <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asvirido <asvirido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/12 18:00:34 by asvirido          #+#    #+#             */
-/*   Updated: 2018/02/03 10:33:41 by asvirido         ###   ########.fr       */
+/*   Updated: 2018/02/03 15:44:30 by asvirido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct		s_contrast
 	int			height;
 	int			max_grey_lvl;
 	int			contrast_lvl;
+	int 		count;
 	char		*name_new_file;
 }					t_contrast;
 

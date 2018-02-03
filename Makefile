@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makafile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asvirido <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: asvirido <asvirido@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/04 14:27:54 by asvirido          #+#    #+#              #
-#    Updated: 2017/01/12 17:54:44 by asvirido         ###   ########.fr        #
+#    Updated: 2018/02/03 15:47:45 by asvirido         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ GENERAL = 	./src/general/get_next_line.c 										\
 SRC = 	$(LIBFT)																\
 		$(LIST) 																\
 		$(GENERAL)																\
-		main.c 																	\
+		./src/thread/thread_main.c 												\
 
 BINS = $(SRC:.c=.o)
 
