@@ -20,7 +20,7 @@ typedef struct		s_contrast
 	int			lenght;
 	int			height;
 	int			max_grey_lvl;
-	int			contrast;
+	int			contrast_lvl;
 	char		*name_new_file;
 }					t_contrast;
 

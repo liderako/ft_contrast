@@ -12,18 +12,16 @@
 
 #include "head.h"
 
-// t_contrast	*create_mapping(t_lst *list)
-// {
-// 	t_contrast		*main;
-
-// 	main = (t_contrast*)malloc(sizeof(t_contrast));
-// 	return (main);
-// }
+void 	init(t_contrast *main, char **argv)
+{
+	main->name_new_file = ft_strdup(argv[5]);
+	main->contrast_lvl = ft_atoi(argv[4]);
+}
 
 int		main(int argc, char **argv)
 {
 	t_lst			*list_read;
-	// t_contrast		*main;
+	t_contrast		*main;
 
 	if (input_param(argc, argv) != 1)
 		return (-1);
@@ -33,7 +31,8 @@ int		main(int argc, char **argv)
 		printf("Error file\n");
 		return (0);
 	}
-	//main = create_mapping(list_read);
+	main = (t_contrast*)malloc(sizeof(t_contrast));
+	init(main, argv);
 	// while (list_read->next)
 	// {
 	// 	printf("%s\n", list_read->line);
