@@ -6,7 +6,7 @@
 /*   By: asvirido <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/12 18:00:34 by asvirido          #+#    #+#             */
-/*   Updated: 2017/05/17 22:49:38 by asvirido         ###   ########.fr       */
+/*   Updated: 2018/02/03 10:33:41 by asvirido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 # include "libft/libft.h"
 # include <stdio.h>
 
-typedef struct 	s_list
+typedef struct	s_lst
 {
-	char 			*line;
+	char			*line;
 	size_t			len;
-	struct s_list	*next;
-}				t_list;
+	struct s_lst	*next;
+}				t_lst;
 
-
-t_list		*ft_nlstnew(char *string);
-void		ft_nlstadd(t_list *nlst, char *string);
-int 		input_param(int argc, char **argv);
+t_lst			*ft_nlstnew(char *string);
+void			ft_nlstadd(t_lst *nlst, char *string);
+int				input_param(int argc, char **argv);
+t_lst			*ft_read(char **argv);
 
 #endif

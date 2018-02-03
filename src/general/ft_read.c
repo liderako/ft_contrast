@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_read.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asvirido <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/21 11:24:25 by asvirido          #+#    #+#             */
-/*   Updated: 2016/12/06 14:02:22 by asvirido         ###   ########.fr       */
+/*   Created: 2018/02/03 10:28:32 by asvirido          #+#    #+#             */
+/*   Updated: 2018/02/03 10:28:33 by asvirido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "general.h"
 
-size_t	ft_strlen(const char *s)
+t_lst	*ft_read(char **argv)
 {
-	size_t	lenght;
+	t_lst	*new;
+	t_lst	*head;
+	char	*line;
+	int		fd;
+	int		res;
 
-	lenght = 0;
-	while (s[lenght])
-		lenght++;
-	return (lenght);
+	fd = open(argv[2], O_RDONLY);
+	if ((res = get_next_line(fd, &line)) != 1)
+		return (ft_nlstnew(""));
+	new = ft_nlstnew(line);
+	head = new;
+	free(line);
+	while ((res = get_next_line(fd, &line)) > 0)
+	{
+		ft_nlstadd(new, line);
+		free(line);
+		line = NULL;
+	}
+	close(fd);
+	return (head);
 }

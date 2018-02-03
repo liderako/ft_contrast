@@ -5,22 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asvirido <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/02 20:17:32 by asvirido          #+#    #+#             */
-/*   Updated: 2018/02/02 20:17:33 by asvirido         ###   ########.fr       */
+/*   Created: 2016/11/21 12:15:57 by asvirido          #+#    #+#             */
+/*   Updated: 2017/03/09 15:54:51 by asvirido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stdlib.h>
-# include <string.h>
 
-size_t		ft_strlen(const char *s);
-char		*ft_strjoin(char const *s1, char const *s2);
-char		*ft_strcpy(char *dst, const char *src);
-char		*ft_strdup(const char *s1);
-void		ft_bzero(void *s, size_t n);
-int			ft_strcmp(const char *s1, const char *s2);
-char		*ft_strsub(char const *s, unsigned int start, size_t len);
-int			ft_atoi(const char *str);
+# include <string.h>
+# include <stdlib.h>
+# include <unistd.h>
+
+int		ft_atoi(const char *s);
+void	ft_bzero(void *s, size_t n);
+int		ft_isdigit(int c);
+void	*ft_memset(void *d, int c, size_t len);
+int		ft_strcmp(const char *s1, const char *s2);
+char	*ft_strcpy(char *dst, const char *src);
+char	*ft_strdup(const char *s1);
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlen(const char *s);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+
 #endif

@@ -3,52 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alukyane <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asvirido <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/25 18:30:21 by alukyane          #+#    #+#             */
-/*   Updated: 2017/09/25 18:30:23 by alukyane         ###   ########.fr       */
+/*   Created: 2016/11/21 13:45:14 by asvirido          #+#    #+#             */
+/*   Updated: 2016/12/12 15:23:37 by asvirido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_check_how_long(long long int k, char c, size_t len)
+int		ft_atoi(const char *s)
 {
-	if (k <= 9223372036854775807 && k >= 0 && len <= 19)
-	{
-		if (c == '-')
-			k *= -1;
-		return (k);
-	}
-	else if (c == '-')
-		k = 0;
-	else
-		k = -1;
-	return (k);
-}
+	int		result;
+	int		minus;
+	int		i;
 
-int				ft_atoi(const char *str)
-{
-	int				i;
-	int				min;
-	long long int	k;
-	size_t			len;
-
+	minus = 1;
+	result = 0;
 	i = 0;
-	k = 0;
-	len = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-			str[i] == '\v' || str[i] == '\r' || str[i] == '\f')
-		++i;
-	min = i;
-	if (str[min] == '+' || str[min] == '-')
-		++i;
-	while (str[i] != '\0' && '0' <= str[i] && str[i] <= '9')
+	while ((s[i] >= 9 && s[i] <= 13) || s[i] == 32)
+		i++;
+	if ((s[i] == '-') || (s[i] == '+'))
 	{
-		k = 10 * k + str[i] - '0';
-		++len;
-		++i;
+		if (s[i] == '-')
+			minus = -1;
+		i++;
 	}
-	k = ft_check_how_long(k, str[min], len);
-	return (k);
+	while (ft_isdigit(s[i]) == 1)
+	{
+		result = (result * 10) + (s[i] - '0');
+		i++;
+	}
+	return (minus * result);
 }

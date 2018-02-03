@@ -12,14 +12,14 @@
 
 #include "../general.h"
 
-t_list		*ft_nlstnew(char *string)
+t_lst		*ft_nlstnew(char *string)
 {
-	t_list	*nw;
+	t_lst	*nw;
 
-	nw = (t_list *)malloc(sizeof(t_list));
+	nw = (t_lst *)malloc(sizeof(t_lst));
 	if (nw)
 	{
-		nw->line = string;
+		nw->line = ft_strdup(string);
 		nw->len = ft_strlen(string);
 		nw->next = NULL;
 		return (nw);

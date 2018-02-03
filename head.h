@@ -14,9 +14,4 @@
 # define HEAD_H
 # include "src/general/general.h"
 
-// typedef struct  s_contrast
-// {
-	
-// }				t_contrast;
-
 #endif

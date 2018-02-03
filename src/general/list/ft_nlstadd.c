@@ -12,7 +12,7 @@
 
 #include "../general.h"
 
-void	ft_nlstadd(t_list *nlst, char *string)
+void	ft_nlstadd(t_lst *nlst, char *string)
 {
 	while (nlst->next)
 		nlst = nlst->next;

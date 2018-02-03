@@ -6,7 +6,7 @@
 /*   By: alukyane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/02 20:03:39 by alukyane          #+#    #+#             */
-/*   Updated: 2018/02/02 20:03:42 by alukyane         ###   ########.fr       */
+/*   Updated: 2018/02/03 10:31:35 by asvirido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int		ft_check_args(int argc, char **av)
 	return (-1);
 }
 
-int 	input_param(int argc, char **argv)
+int				input_param(int argc, char **argv)
 {
 	if (ft_check_args(argc, argv) != 1)
 	{

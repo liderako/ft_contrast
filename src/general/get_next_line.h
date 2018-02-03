@@ -6,13 +6,13 @@
 /*   By: asvirido <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 15:59:40 by asvirido          #+#    #+#             */
-/*   Updated: 2017/01/25 17:08:47 by asvirido         ###   ########.fr       */
+/*   Updated: 2017/02/02 11:08:54 by asvirido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFF_SIZE 10000
+# define BUFF_SIZE 11
 # define ERROR -1
 # define END 0
 # define LINE 1
@@ -24,11 +24,9 @@
 # include <unistd.h>
 
 int					get_next_line(const int fd, char **line);
-
 typedef struct		s_line
 {
 	char			*tmp;
 	int				define;
 }					t_line;
-
- #endif
+#endif
