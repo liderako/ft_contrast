@@ -12,7 +12,7 @@
 
 #include "general.h"
 
-void 	init(t_contrast *main, char **argv)
+void	init(t_contrast *main, char **argv)
 {
 	main->name_new_file = ft_strdup(argv[6]);
 	main->contrast_lvl = ft_atoi(argv[4]);

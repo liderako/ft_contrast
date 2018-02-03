@@ -28,7 +28,9 @@ LIBFT = ./src/general/libft/ft_atoi.c 											\
 		./src/general/libft/ft_putchar_fd.c 									\
 		./src/general/libft/ft_putnbr_fd.c 										\
 		./src/general/libft/ft_putstr_fd.c 										\
-
+		./src/general/libft/ft_strncpy.c 										\
+		./src/general/libft/ft_strncmp.c 										\
+		./src/general/libft/ft_strsplit.c 										\
 
 LIST = 	./src/general/list/ft_nlstadd.c 										\
 		./src/general/list/ft_nlstnew.c 										\
@@ -40,12 +42,14 @@ GENERAL = 	./src/general/get_next_line.c 										\
 			./src/general/algo_contrast.c 										\
 			./src/general/change_mapping.c 										\
 			./src/general/save_file.c 											\
+			./src/general/valid_filling.c 										\
+			./src/general/create_arr_int.c 										\
 
 
 SRC = 	$(LIBFT)																\
 		$(LIST) 																\
 		$(GENERAL)																\
-		./src/thread/thread_main.c 												\
+		main.c 																	\
 
 BINS = $(SRC:.c=.o)
 

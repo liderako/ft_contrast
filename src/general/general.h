@@ -6,7 +6,7 @@
 /*   By: asvirido <asvirido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/12 18:00:34 by asvirido          #+#    #+#             */
-/*   Updated: 2018/02/03 15:44:30 by asvirido         ###   ########.fr       */
+/*   Updated: 2018/02/03 19:33:21 by asvirido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@
 # include "libft/libft.h"
 # include <stdio.h>
 
-typedef struct		s_contrast
+typedef struct	s_contrast
 {
-	int			*mapping_pixel;
-	int 		size_map;
-	int			lenght;
-	int			height;
-	int			max_grey_lvl;
-	int			contrast_lvl;
-	int 		count;
-	char		*name_new_file;
-}					t_contrast;
+	int		*mapping_pixel;
+	int		size_map;
+	int		lenght;
+	int		height;
+	int		max_grey_lvl;
+	int		contrast_lvl;
+	int		count;
+	char	*name_new_file;
+}				t_contrast;
 
 typedef struct	s_lst
 {
@@ -39,9 +39,11 @@ t_lst			*ft_nlstnew(char *string);
 void			ft_nlstadd(t_lst *nlst, char *string);
 int				input_param(int argc, char **argv);
 t_lst			*ft_read(char **argv);
-void 			init(t_contrast *main, char **argv);
+void			init(t_contrast *main, char **argv);
 void			change_mapping(t_contrast *main);
-void 			algo_contrast(t_contrast *main, int i);
+void			algo_contrast(t_contrast *main, int i);
 void			save_file(t_contrast *main);
+t_contrast		*create_arr_int(t_lst *list_read, t_contrast *main_list);
+t_contrast		*valid_filling(t_contrast *main_list, t_lst *list_read);
 
 #endif

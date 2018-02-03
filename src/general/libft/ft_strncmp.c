@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   change_mapping.c                                   :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asvirido <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/03 13:42:44 by asvirido          #+#    #+#             */
-/*   Updated: 2018/02/03 19:32:21 by asvirido         ###   ########.fr       */
+/*   Created: 2016/11/22 12:13:27 by asvirido          #+#    #+#             */
+/*   Updated: 2016/12/08 12:43:26 by asvirido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "general.h"
+#include "libft.h"
 
-void	change_mapping(t_contrast *main)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int		i;
+	size_t			i;
+	unsigned char	*p1;
+	unsigned char	*p2;
 
+	p1 = (unsigned char*)s1;
+	p2 = (unsigned char*)s2;
 	i = 0;
-	while (i < main->size_map)
+	while (n--)
 	{
-		algo_contrast(main, i);
+		if (p1[i] != p2[i])
+			return (p1[i] - p2[i]);
+		else if (!s1[i])
+			return (0);
 		i++;
 	}
+	return (0);
 }

@@ -12,30 +12,6 @@
 
 #include "head.h"
 
-void	init_demo(t_contrast *main_x)
-{
-	main_x->lenght = 10;
-	main_x->height = 10;
-	main_x->mapping_pixel = (int*)malloc(sizeof(int) * (10 * 10) + 1);
-	main_x->size_map = 10 * 10;
-	main_x->max_grey_lvl = 5;
-	int x = 0;
-	int y = 0;
-	int i = 0;
-	while (y < main_x->lenght)
-	{
-		x = 0;
-		while (x < main_x->height)
-		{
-			main_x->mapping_pixel[i] = 5;
-			i++;
-			x++;
-		}
-		y++;
-	}
-}
-
-
 int		main(int argc, char **argv)
 {
 	t_lst			*list_read;
@@ -51,7 +27,12 @@ int		main(int argc, char **argv)
 	}
 	main_x = (t_contrast*)malloc(sizeof(t_contrast));
 	init(main_x, argv);
-	init_demo(main_x);
+	main_x = valid_filling(main_x, list_read);
+	if (main_x->size_map == 0)
+	{
+		printf("Error file\n");
+		return (0);
+	}
 	change_mapping(main_x);
 	save_file(main_x);
 }

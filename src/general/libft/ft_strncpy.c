@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   change_mapping.c                                   :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asvirido <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/03 13:42:44 by asvirido          #+#    #+#             */
-/*   Updated: 2018/02/03 19:32:21 by asvirido         ###   ########.fr       */
+/*   Created: 2016/11/23 13:10:46 by asvirido          #+#    #+#             */
+/*   Updated: 2016/12/08 12:44:47 by asvirido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "general.h"
+#include "libft.h"
 
-void	change_mapping(t_contrast *main)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	int		i;
+	size_t	i;
 
 	i = 0;
-	while (i < main->size_map)
+	while ((len > 0) && (src[i]) != '\0')
 	{
-		algo_contrast(main, i);
+		dst[i] = src[i];
+		i++;
+		len--;
+	}
+	while (len--)
+	{
+		dst[i] = '\0';
 		i++;
 	}
+	return (dst);
 }

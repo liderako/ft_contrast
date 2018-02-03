@@ -6,7 +6,7 @@
 /*   By: asvirido <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/03 13:46:54 by asvirido          #+#    #+#             */
-/*   Updated: 2018/02/03 13:46:55 by asvirido         ###   ########.fr       */
+/*   Updated: 2018/02/03 19:29:56 by asvirido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ static void		save_two(t_contrast *main, int fd)
 
 void			save_file(t_contrast *main)
 {
-	int 	x;
-	int 	y;
-	int 	i;
-	int 	fd;
+	int		x;
+	int		y;
+	int		i;
+	int		fd;
 
 	i = 0;
 	y = 0;
