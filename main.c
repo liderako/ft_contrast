@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "head.h"
+#include <unistd.h>
 
 int		main(int argc, char **argv)
 {
@@ -35,4 +36,7 @@ int		main(int argc, char **argv)
 	}
 	change_mapping(main_x);
 	save_file(main_x);
+	// printf("%ld\n",sysconf(_SC_NPROCESSORS_ONLN));
+	    // printf("Configured CPUs: %d\n", get_nprocs_conf());
+    // printf("Available CPUs: %d\n", get_nprocs());
 }

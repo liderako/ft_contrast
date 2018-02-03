@@ -12,7 +12,7 @@
 
 #include "general.h"
 
-static void		save_two(t_contrast *main, int fd)
+void		save_two(t_contrast *main, int fd)
 {
 	ft_putstr_fd("P2\n", fd);
 	ft_putstr_fd("# ", fd);

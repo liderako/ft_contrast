@@ -25,8 +25,14 @@ typedef struct	s_contrast
 	int		max_grey_lvl;
 	int		contrast_lvl;
 	int		count;
+	int 	*array;
 	char	*name_new_file;
 }				t_contrast;
+
+typedef struct	s_thread
+{
+	t_contrast	*thread;
+}				t_thread;
 
 typedef struct	s_lst
 {

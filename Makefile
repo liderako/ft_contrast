@@ -12,7 +12,7 @@
 
 NAME = ft_contrast
 
-FLAGS = -c -Wall -Wextra -Werror
+FLAGS = -c
 
 HEADER = head.h
 
@@ -45,11 +45,13 @@ GENERAL = 	./src/general/get_next_line.c 										\
 			./src/general/valid_filling.c 										\
 			./src/general/create_arr_int.c 										\
 
+THREAD =	./src/thread/get_borders.c 											\
 
 SRC = 	$(LIBFT)																\
 		$(LIST) 																\
 		$(GENERAL)																\
-		main.c 																	\
+		$(THREAD)																\
+		./src/thread/main.c 													\
 
 BINS = $(SRC:.c=.o)
 

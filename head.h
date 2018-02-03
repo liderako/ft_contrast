@@ -15,4 +15,6 @@
 # include "src/general/general.h"
 # include <pthread.h>
 # define FT_CPU 4
+int			*get_borders(t_contrast *main_list);
+void		save_two(t_contrast *main, int fd);
 #endif
