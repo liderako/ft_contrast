@@ -22,7 +22,10 @@ t_lst	*ft_read(char **argv)
 
 	fd = open(argv[2], O_RDONLY);
 	if ((res = get_next_line(fd, &line)) != 1)
+	{
+		close(fd);
 		return (ft_nlstnew(""));
+	}
 	new = ft_nlstnew(line);
 	head = new;
 	free(line);
