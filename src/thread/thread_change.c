@@ -21,7 +21,7 @@ void	*thread_change(void *parameter)
 	i = x->array[x->count];
 	while (i < x->array[x->count + 1])
 	{
-		x->mapping_pixel[i] *= x->contrast_lvl / 100;
+		algo_contrast(x, i);
 		i++;
 	}
 	return (0);
