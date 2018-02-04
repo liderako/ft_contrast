@@ -51,7 +51,7 @@ SRC = 	$(LIBFT)																\
 		$(LIST) 																\
 		$(GENERAL)																\
 		$(THREAD)																\
-		main.c 													\
+		./src/thread/main.c 													\
 
 BINS = $(SRC:.c=.o)
 
