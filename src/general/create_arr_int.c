@@ -43,16 +43,18 @@ static int			*get_xy_grey(t_lst *head)
 	while (head && j < 3)
 	{
 		arr_char = ft_strsplit(head->line, ' ');
-		while (arr_char[++i])
+		while (arr_char[++i] && j < 3)
 		{
+
 			res = ft_atoi(arr_char[i]);
-			if (0 <= res && res <= 255)
+			if (0 <= res && (j < 2 || (j > 1 && res <= 255)))
 				arr_int[j++] = res;
 			else
 				arr_int[0] = 0;
 		}
 		i = -1;
 		head = head->next;
+		free(arr_char);
 	}
 	return (arr_int);
 }
@@ -80,6 +82,7 @@ static int			*make_arr_pixel(t_lst *head, t_contrast *main_list)
 		}
 		index[0] = -1;
 		head = head->next;
+		free(arr_char);
 	}
 	return (arr_i);
 }

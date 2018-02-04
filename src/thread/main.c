@@ -32,7 +32,7 @@ int 	get_color(t_thread *tmp, int i)
 
 	j = 0;
 	res = -1;
-	cores = (int)sysconf(_SC_NPROCESSORS_ONLN);
+	cores = 4;//(int)sysconf(_SC_NPROCESSORS_ONLN);
 	while (j < cores)
 	{
 		if (i < tmp[j].thread->array[tmp[j].thread->count + 1])
