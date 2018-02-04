@@ -14,7 +14,7 @@ NAME_MAIN = ft_contrast
 
 NAME_THREAD = ft_contrast_th
 
-FLAGS = -c
+FLAGS = -c -Wall -Wextra -Werror
 
 HEADER = head.h
 
