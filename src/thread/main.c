@@ -27,8 +27,18 @@ void	*thread_change(void *parameter)
 int 	get_color(t_thread *tmp, int i)
 {
 	int 	res;
+	int 	cores;
+	int 	j;
 
-	res = 0;
+	j = 0;
+	res = -1;
+	cores = (int)sysconf(_SC_NPROCESSORS_ONLN);
+	while (j < cores)
+	{
+		if (i < tmp[j].thread->array[tmp[j].thread->count + 1])
+			return (tmp[j].thread->mapping_pixel[i]);
+		j++;
+	}
 	return (res);
 }
 
@@ -54,6 +64,7 @@ void	thread_save_file(t_thread *tmp)
 			color = get_color(tmp, i);
 			ft_putnbr_fd(color, fd);
 			x++;
+			i++;
 		}
 		ft_putchar_fd('\n', fd);
 		y++;
