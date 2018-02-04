@@ -33,6 +33,12 @@ LIBFT = ./src/general/libft/ft_atoi.c 											\
 		./src/general/libft/ft_strncpy.c 										\
 		./src/general/libft/ft_strncmp.c 										\
 		./src/general/libft/ft_strsplit.c 										\
+		./src/general/libft/ft_memchr.c 										\
+		./src/general/libft/ft_memalloc.c 										\
+		./src/general/libft/ft_strnew.c											\
+		./src/general/libft/ft_strdel.c 										\
+		./src/general/libft/ft_memdel.c 										\
+		./src/general/libft/ft_memset.c 										\
 
 LIST = 	./src/general/list/ft_nlstadd.c 										\
 		./src/general/list/ft_nlstnew.c 										\
@@ -52,6 +58,8 @@ THREAD =	./src/thread/get_borders.c 											\
 			./src/thread/thread_change.c 										\
 			./src/thread/thread_save_file.c 									\
 			./src/thread/thread_change_mapping.c 								\
+			./src/thread/read_from_file.c 										\
+			./src/thread/ft_read_thread.c 										\
 
 SRC_GEN = 	$(LIBFT)															\
 			$(LIST) 															\

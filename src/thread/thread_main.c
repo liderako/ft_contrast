@@ -19,7 +19,7 @@ int		main(int argc, char **argv)
 
 	if (input_param(argc, argv) != 1)
 		return (-1);
-	list_read = ft_read(argv);
+	list_read = ft_read_thread(argv);
 	if (list_read->len == 0)
 	{
 		printf("Error file\n");

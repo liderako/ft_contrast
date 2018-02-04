@@ -33,5 +33,10 @@ void	ft_putstr_fd(char *s, int fd);
 char	*ft_strncpy(char *dst, const char *src, size_t len);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	**ft_strsplit(char const *s, char c);
+void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
+void	*ft_memchr(const void *str, int c, size_t n);
+char	*ft_strnew(size_t size);
+void	ft_strdel(char **as);
 
 #endif
