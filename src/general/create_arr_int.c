@@ -73,10 +73,11 @@ static int			*make_arr_pixel(t_lst *head, t_contrast *main_list)
 		while (arr_char[++index[0]])
 		{
 			index[3] = ft_atoi(arr_char[index[0]]);
-			if (0 <= index[3] && index[3] <= 255 && index[2]++ > 2)
+			if (0 <= index[3] && index[3] <= 255 && index[2] > 2)
 				arr_i[index[1]++] = index[3];
 			else
 				arr_i[0] = -1;
+			index[2]++;
 		}
 		index[0] = -1;
 		head = head->next;
