@@ -6,7 +6,7 @@
 /*   By: asvirido <asvirido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/12 18:00:34 by asvirido          #+#    #+#             */
-/*   Updated: 2018/02/03 19:33:21 by asvirido         ###   ########.fr       */
+/*   Updated: 2018/02/04 18:40:37 by asvirido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ typedef struct	s_contrast
 	int		max_grey_lvl;
 	int		contrast_lvl;
 	int		count;
-	int 	*array;
+	int		*array;
 	char	*name_new_file;
 }				t_contrast;
 
 typedef struct	s_thread
 {
 	t_contrast	*thread;
+	int			cores;
 }				t_thread;
 
 typedef struct	s_lst

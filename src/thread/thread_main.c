@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   thread_main.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asvirido <asvirido@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asvirido <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/02 20:03:39 by alukyane          #+#    #+#             */
-/*   Updated: 2018/02/03 15:28:54 by asvirido         ###   ########.fr       */
+/*   Created: 2018/02/04 18:33:24 by asvirido          #+#    #+#             */
+/*   Updated: 2018/02/04 18:33:25 by asvirido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "head.h"
-#include <unistd.h>
+#include "../../head.h"
 
 int		main(int argc, char **argv)
 {
@@ -34,6 +33,5 @@ int		main(int argc, char **argv)
 		printf("Error file\n");
 		return (0);
 	}
-	change_mapping(main_x);
-	save_file(main_x);
+	thread_change_mapping(main_x);
 }

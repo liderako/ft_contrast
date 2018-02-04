@@ -10,7 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_contrast
+NAME_MAIN = ft_contrast
+
+NAME_THREAD = ft_contrast_th
 
 FLAGS = -c
 
@@ -46,30 +48,59 @@ GENERAL = 	./src/general/get_next_line.c 										\
 			./src/general/create_arr_int.c 										\
 
 THREAD =	./src/thread/get_borders.c 											\
+			./src/thread/ft_copy.c 												\
+			./src/thread/thread_change.c 										\
+			./src/thread/thread_save_file.c 									\
+			./src/thread/thread_change_mapping.c 								\
 
-SRC = 	$(LIBFT)																\
-		$(LIST) 																\
-		$(GENERAL)																\
-		$(THREAD)																\
-		./src/thread/main.c 													\
+SRC_GEN = 	$(LIBFT)															\
+			$(LIST) 															\
+			$(GENERAL)															\
+		
+SRC_THREAD	=	$(THREAD)														\
 
-BINS = $(SRC:.c=.o)
+MAIN_MAIN = main.c 																\
 
-all: $(NAME)
+MAIN_THREAD = ./src/thread/thread_main.c 										\
 
-$(NAME): $(BINS)
-	gcc -o $(NAME) $(BINS)
+BINS_GEN = $(SRC_GEN:.c=.o)
+
+BINS_MAIN = $(MAIN_MAIN:.c=.o)
+
+BINS_THREAD =	$(MAIN_THREAD:.c=.o)											\
+				$(SRC_THREAD:.c=.o)
+
+all: $(NAME_MAIN) $(NAME_THREAD)
+
+$(NAME_MAIN): $(BINS_GEN) $(BINS_MAIN)
+	gcc -o $(NAME_MAIN) $(BINS_GEN) $(BINS_MAIN)
+
+$(NAME_THREAD): $(BINS_GEN) $(BINS_THREAD)
+	gcc -o $(NAME_THREAD) $(BINS_GEN) $(BINS_THREAD)
 
 %.o: %.c $(HEADER)
 	gcc $(FLAGS) -o $@ $<
 
 clean:
-	 /bin/rm -f $(BINS)
+	/bin/rm -f $(BINS_GEN) $(BINS_MAIN) $(BINS_THREAD)
+
+clean_ft_contrast:
+	 /bin/rm -f $(BINS_GEN) $(BINS_MAIN)
+
+clean_ft_contrast_th:
+	 /bin/rm -f $(BINS_GEN) $(BINS_THREAD)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	/bin/rm -f $(NAME_MAIN) $(NAME_THREAD)
+
+fclean_ft_contrast: clean_ft_contrast
+	/bin/rm -f $(NAME_MAIN)
+
+fclean_ft_contrast_th: clean_ft_contrast_th
+	/bin/rm -f $(NAME_THREAD)
 
 re: fclean all
 
-norm:
-	norminette *.c *.h
+re_ft_contrast: fclean_ft_contrast $(NAME_MAIN)
+
+re_ft_contrast_th: fclean_ft_contrast_th $(NAME_THREAD)

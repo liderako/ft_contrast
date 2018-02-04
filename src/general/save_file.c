@@ -26,7 +26,7 @@ void		save_two(t_contrast *main, int fd)
 	ft_putstr_fd("\n", fd);
 }
 
-void			save_file(t_contrast *main)
+void		save_file(t_contrast *main)
 {
 	int		x;
 	int		y;

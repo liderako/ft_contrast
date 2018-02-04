@@ -32,27 +32,25 @@ static int			ft_words(char const *s, char c)
 static int			*get_xy_grey(t_lst *head)
 {
 	char	**arr_char;
-	int		i;
+	int		index[2];
 	int		*arr_int;
-	int		j;
 	int		res;
 
-	i = -1;
-	j = 0;
+	index[0] = -1;
+	index[1] = 0;
 	arr_int = (int *)malloc(sizeof(int) * 3);
-	while (head && j < 3)
+	while (head && index[1] < 3)
 	{
 		arr_char = ft_strsplit(head->line, ' ');
-		while (arr_char[++i] && j < 3)
+		while (arr_char[++index[0]] && index[1] < 3)
 		{
-
-			res = ft_atoi(arr_char[i]);
-			if (0 <= res && (j < 2 || (j > 1 && res <= 255)))
-				arr_int[j++] = res;
+			res = ft_atoi(arr_char[index[0]]);
+			if (0 <= res && (index[1] < 2 || (index[1] > 1 && res <= 255)))
+				arr_int[index[1]++] = res;
 			else
 				arr_int[0] = 0;
 		}
-		i = -1;
+		index[0] = -1;
 		head = head->next;
 		free(arr_char);
 	}
